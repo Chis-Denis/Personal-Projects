@@ -1,0 +1,7 @@
+﻿AdminWindow.obj : error LNK2019: unresolved external symbol "public: void __cdecl Service::undo(void)" (?undo@Service@@QEAAXXZ) referenced in function "private: void __cdecl AdminWindow::on_pushButtonUndo_clicked(void)" (?on_pushButtonUndo_clicked@AdminWindow@@AEAAXXZ)
+AdminWindow.obj : error LNK2019: unresolved external symbol "public: void __cdecl Service::redo(void)" (?redo@Service@@QEAAXXZ) referenced in function "private: void __cdecl AdminWindow::on_pushButtonRedo_clicked(void)" (?on_pushButtonRedo_clicked@AdminWindow@@AEAAXXZ)
+AdminWindow.obj : error LNK2019: unresolved external symbol "public: void __cdecl Service::cleanup(void)" (?cleanup@Service@@QEAAXXZ) referenced in function "private: void __cdecl AdminWindow::on_pushButtonExit_clicked(void)" (?on_pushButtonExit_clicked@AdminWindow@@AEAAXXZ)
+GenreWindow.obj : error LNK2001: unresolved external symbol "public: void __cdecl Service::cleanup(void)" (?cleanup@Service@@QEAAXXZ)
+UserWindow.obj : error LNK2001: unresolved external symbol "public: void __cdecl Service::cleanup(void)" (?cleanup@Service@@QEAAXXZ)
+WatchListWindow.obj : error LNK2001: unresolved external symbol "public: void __cdecl Service::cleanup(void)" (?cleanup@Service@@QEAAXXZ)
+C:\Users\Chisu\source\repos\Anu 1 Faculta\OOP A8-9\x64\Debug\OOP A8-9.exe : fatal error LNK1120: 3 unresolved externals

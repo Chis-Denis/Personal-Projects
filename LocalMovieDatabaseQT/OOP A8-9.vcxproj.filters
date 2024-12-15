@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Source Files\UserInterface">
+      <UniqueIdentifier>{859d511c-c00e-4e7c-a148-f4ef215b7acd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Service">
+      <UniqueIdentifier>{d7016b7a-5f15-4321-a380-88a8f5002fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Repository">
+      <UniqueIdentifier>{6aa584d7-e9bb-4acf-92d3-8dd4edc1f80a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ustensils">
+      <UniqueIdentifier>{dd1e94e7-5ba5-40ef-8f91-8052def30f74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Output">
+      <UniqueIdentifier>{afc55531-e6b9-4e5b-8d1c-515b5f826f9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SaveFile">
+      <UniqueIdentifier>{50981691-8909-4f6a-b486-11f5ebee19eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domains">
+      <UniqueIdentifier>{91f7c449-7da2-45cb-a4ca-683015f08aaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MainWindow">
+      <UniqueIdentifier>{73fa43bb-86da-436c-94db-3b82f74e1cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AdminUserWindow">
+      <UniqueIdentifier>{b3c1250f-c9ff-4722-a080-60576921c5e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="MainWindow.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="MainWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Movie.cpp">
+      <Filter>Source Files\Domains</Filter>
+    </ClCompile>
+    <ClCompile Include="WatchList.cpp">
+      <Filter>Source Files\Domains</Filter>
+    </ClCompile>
+    <ClCompile Include="tests.cpp">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClCompile>
+    <ClCompile Include="Repository.cpp">
+      <Filter>Source Files\Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Service.cpp">
+      <Filter>Source Files\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
+      <Filter>Source Files\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source Files\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminUserWindow.cpp">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="UserWindow.cpp">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminWindow.cpp">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="WatchListWindow.cpp">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="GenreWindow.cpp">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Media.h">
+      <Filter>Source Files\Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="Movie.h">
+      <Filter>Source Files\Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="WatchList.h">
+      <Filter>Source Files\Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClInclude>
+    <ClInclude Include="tests.h">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClInclude>
+    <ClInclude Include="Validator.h">
+      <Filter>Source Files\Ustensils</Filter>
+    </ClInclude>
+    <ClInclude Include="Repository.h">
+      <Filter>Source Files\Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
+      <Filter>Source Files\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Source Files\UserInterface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Settings.txt">
+      <Filter>Source Files\SaveFile</Filter>
+    </Text>
+    <Text Include="Watch_List.txt">
+      <Filter>Source Files\Output</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Watch_List.csv">
+      <Filter>Source Files\Output</Filter>
+    </None>
+    <None Include="Watch_List.html">
+      <Filter>Source Files\Output</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MainWindow.h">
+      <Filter>Source Files\MainWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminUserWindow.h">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="UserWindow.h">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminWindow.h">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="WatchListWindow.h">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="GenreWindow.h">
+      <Filter>Source Files\AdminUserWindow</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OOP A8-9.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="AdminUserWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="AdminWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="UserWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="WatchListWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>
