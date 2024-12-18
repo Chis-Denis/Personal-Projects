@@ -166,6 +166,93 @@ public class Interpreter {
         IRepository repo12 = new Repository(prg12, "ex12.txt");
         Controller controller12 = new Controller(repo12);
 
+                // example 13: int v; Ref int a; v = 10; new(a,22);
+        //             fork(wH(a,30); v = 32; print(v); print(rH(a)));
+        //             print(v); print(rH(a))
+        IStmt ex13 = new CompStmt(new VarDeclStmt("v", new IntType()),
+                new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+                        new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(10))),
+                                new CompStmt(new neW("a", new ValueExp(new IntValue(22))),
+                                        new CompStmt(new ForkStmt(new CompStmt(new writeToHeap("a", new ValueExp(new IntValue(30))),
+                                                new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                                        new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new readFromHeap(new VarExp("a"))))))),
+                                                new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new readFromHeap(new VarExp("a")))))))));
+        ProgramState prg13 = new ProgramState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(),
+                new MyList<IValue>(), new MyFileTable<StringValue, BufferedReader>(), new MyHeapTable<IValue>(), ex13);
+        IRepository repo13 = new Repository(prg13, "ex13.txt");
+        Controller controller13 = new Controller(repo13);
+        // example 14:
+        //Ref (int) a;
+        //int v;
+        //new(a, 10);
+        //fork(
+        //	v=20;
+        //	fork(
+        //		wH(a, 40);
+        //		print(rH(a));
+        //	);
+        //	print(v);
+        //	);
+        //v=30;
+        //print(v);
+        //print(rH(a));
+        IStmt ex14 = new CompStmt(
+                new VarDeclStmt("a", new RefType(new IntType())), // Ref int a
+                new CompStmt(
+                        new VarDeclStmt("v", new IntType()), // int v
+                        new CompStmt(
+                                new neW("a", new ValueExp(new IntValue(10))), // new(a, 10)
+                                new CompStmt(
+                                        new ForkStmt( // Outer fork
+                                                new CompStmt(
+                                                        new AssignStmt("v", new ValueExp(new IntValue(20))), // v = 20
+                                                        new CompStmt(
+                                                                new ForkStmt( // Inner fork
+                                                                        new CompStmt(
+                                                                                new writeToHeap("a", new ValueExp(new IntValue(40))), // wH(a, 40)
+                                                                                new PrintStmt(new readFromHeap(new VarExp("a"))) // print(rH(a))
+                                                                        )
+                                                                ),
+                                                                new PrintStmt(new VarExp("v")) // print(v)
+                                                        )
+                                                )
+                                        ),
+                                        new CompStmt(
+                                                new AssignStmt("v", new ValueExp(new IntValue(30))), // v = 30
+                                                new CompStmt(
+                                                        new PrintStmt(new VarExp("v")), // print(v)
+                                                        new PrintStmt(new readFromHeap(new VarExp("a"))) // print(rH(a))
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        // Create ProgramState, Repository, and Controller
+        ProgramState prg14 = new ProgramState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(),
+                new MyList<IValue>(), new MyFileTable<StringValue, BufferedReader>(), new MyHeapTable<IValue>(), ex14);
+        IRepository repo14 = new Repository(prg14, "ex14.txt");
+        Controller controller14 = new Controller(repo14);
+
+
+
+
+        // example 15: string varf; varf = "test.in"; open file varf; fork(int varc; read file(varf, varc); print(varc);); int varc; read file(varf, varc); print(varc); close file(varf);
+        IStmt ex15 = new CompStmt(new VarDeclStmt("varf", new StringType()),
+                new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
+                        new CompStmt(new openRFile(new VarExp("varf")),
+                                new CompStmt(new ForkStmt(new CompStmt(new VarDeclStmt("varc", new IntType()),
+                                        new CompStmt(new readFile(new VarExp("varf"), "varc"),
+                                                new PrintStmt(new VarExp("varc"))))),
+                                        new CompStmt(new VarDeclStmt("varc", new IntType()),
+                                                new CompStmt(new readFile(new VarExp("varf"), "varc"),
+                                                        new CompStmt(new PrintStmt(new VarExp("varc")),
+                                                                new closeRFile(new VarExp("varf")))))))));
+        ProgramState prg15 = new ProgramState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(),
+                new MyList<IValue>(), new MyFileTable<StringValue, BufferedReader>(), new MyHeapTable<IValue>(), ex15);
+        IRepository repo15 = new Repository(prg15, "ex15.txt");
+        Controller controller15 = new Controller(repo15);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "Exit"));
         menu.addCommand(new RunExample("1", "int v; v = 2; print(x)", controller1));
@@ -180,6 +267,9 @@ public class Interpreter {
         menu.addCommand(new RunExample("10", "Ref int v; new(v, 20); print(rH(v)); wH(v, 30); print(rH(v) + 5);", controller10));
         menu.addCommand(new RunExample("11", "Ref int v; new(v, 20); Ref Ref int a; new(a, v); new(v, 30); print(rH(rH(a)))", controller11));
         menu.addCommand(new RunExample("12", "int v; v=4; (while (v>0) print(v); v=v-1); print(v)", controller12));
+        menu.addCommand(new RunExample("13", "int v; Ref int a; v = 10; new(a,22); fork(wH(a,30); v = 32; print(v); print(rH(a));); print(v); print(rH(a)", controller13));
+        menu.addCommand(new RunExample("14", "Ref (int) a; int v; new(a, 10); fork(v=20; fork(wH(a, 40); print(rH(a));); print(v);); v=30; print(v); print(rH(a);", controller14));
+        menu.addCommand(new RunExample("15", "string varf; varf = \"test.in\"; open file varf; fork(int varc; read file(varf, varc); print(varc);); int varc; read file(varf, varc); print(varc); close file(varf);", controller15));
 
         menu.show();
     }

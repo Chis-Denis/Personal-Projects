@@ -7,6 +7,8 @@ import Model.Types.StringType;
 import Model.Values.IValue;
 import Model.Values.IntValue;
 import Model.Values.StringValue;
+import Model.Types.IType;
+import Model.Structures.IDictionary;
 
 import Model.Exceptions.DictionaryException;
 import Model.Exceptions.ExpressionException;
@@ -36,28 +38,21 @@ public class readFile implements IStmt {
                  
                 if (filePath.getType().equals(new StringType())) {
                     StringValue stringFilePath = (StringValue) filePath;
-
-                    if (!state.getFileTable().isDefined(stringFilePath)) {
-                        throw new FileException("File is not open.");
-                    }
-
-                        BufferedReader file = state.getFileTable().lookUp(stringFilePath);
-
-                        try {
-                            String line = file.readLine();
-
-                            if(line != null) {
-                                state.getSymbolTable().addKeyValuePair(this.variableName, new IntValue(Integer.parseInt(line)));
-                            }
-
-                            else {
-                                state.getSymbolTable().addKeyValuePair(this.variableName, new IntValue(0));
-                            }
-                        } 
-                        
-                        catch (IOException e) {
-                            throw new FileException("Error reading line from file.");
+                    BufferedReader fileDescriptor = state.getFileTable().lookUp(stringFilePath);
+                    
+                    try {
+                        String line = fileDescriptor.readLine();
+                        if (line != null) {
+                            state.getSymbolTable().addKeyValuePair(this.variableName, new IntValue(Integer.parseInt(line)));
                         }
+                        else {
+                            state.getSymbolTable().addKeyValuePair(this.variableName, new IntType().getDefaultValue());
+                        }   
+                    } 
+                    
+                    catch (IOException e) {
+                        throw new FileException("Error reading from file.");
+                    }
                 }
 
                 else {
@@ -74,8 +69,27 @@ public class readFile implements IStmt {
             throw new StatementException("Variable is not defined.");
         }
 
-        return state;
+        return null;
         
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeVar = typeEnv.lookUp(this.variableName);
+        IType typeExp = this.expression.typeCheck(typeEnv);
+
+        if (typeVar.equals(new IntType())) {
+            if (typeExp.equals(new StringType())) {
+                return typeEnv;
+            }
+            else {
+                throw new StatementException("readFile: expression is not a string.");
+            }
+        }
+
+        else {
+            throw new StatementException("readFile: variable is not an integer.");
+        }
     }
 
     @Override

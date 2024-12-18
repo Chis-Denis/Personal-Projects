@@ -4,11 +4,11 @@ import Model.ProgramState.ProgramState;
 
 import Model.Exceptions.FileException;
 
-import java.io.IOException;
+import java.util.List;
 
 public interface IRepository {
-    ProgramState getCurrentProgramState();
     void addProgramState(ProgramState newProgramState);
-    void logPrgStateExec() throws FileException, IOException;
-    
+    void logPrgStateExec(ProgramState programState) throws FileException;
+    void setPrgList(List<ProgramState> newProgramStates);
+    List<ProgramState> getPrgList();
 }

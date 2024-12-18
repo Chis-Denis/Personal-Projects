@@ -10,4 +10,6 @@ public interface IDictionary<K, V> {
     V removeKey(K key) throws DictionaryException;
     boolean isDefined(K key);
     Map<K, V> getContent();
+    void setContent(Map<K, V> newContent);
+    IDictionary<K, V> shallowCopy();
 }

@@ -2,9 +2,11 @@ package Model.Statements;
 
 import Model.Expressions.IExp;
 import Model.ProgramState.ProgramState;
+import Model.Structures.IDictionary;
 import Model.Types.BoolType;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
+import Model.Types.IType;
 
 import Model.Exceptions.ExpressionException;
 import Model.Exceptions.HeapException;
@@ -42,7 +44,22 @@ public class IfStmt implements IStmt {
             throw new StatementException("Conditional expression is not a boolean.");
         }
 
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeConditional = this.expression.typeCheck(typeEnv);
+
+        if (typeConditional.equals(new BoolType())) {
+            this.thenStatement.typeCheck(typeEnv.shallowCopy());
+            this.elseStatement.typeCheck(typeEnv.shallowCopy());
+            return typeEnv;
+        } 
+
+        else {
+            throw new StatementException("The condition of IF has not the type bool.");
+        }
     }
 
     

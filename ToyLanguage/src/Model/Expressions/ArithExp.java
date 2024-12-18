@@ -5,6 +5,7 @@ import Model.Structures.IHeapTable;
 import Model.Values.IValue;
 import Model.Values.IntValue;
 import Model.Types.IntType;
+import Model.Types.IType;
 
 import Model.Exceptions.ExpressionException;
 import Model.Exceptions.HeapException;
@@ -73,6 +74,25 @@ public class ArithExp implements IExp{
         }
         
 
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws ExpressionException, DictionaryException {
+        IType type1, type2;
+        type1 = exp1.typeCheck(typeEnvironment);
+        type2 = exp2.typeCheck(typeEnvironment);
+
+        if (type1.equals(new IntType())) {
+            if (type2.equals(new IntType())) {
+                return new IntType();
+            } 
+            else {
+                throw new ExpressionException("Second operand is not an integer.");
+            }
+        } 
+        else {
+            throw new ExpressionException("First operand is not an integer.");
+        }
     }
 
     @Override

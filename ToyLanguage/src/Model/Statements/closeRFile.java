@@ -1,6 +1,8 @@
 package Model.Statements;
 
 import Model.ProgramState.ProgramState;
+import Model.Structures.IDictionary;
+import Model.Types.IType;
 import Model.Types.StringType;
 import Model.Values.IValue;
 import Model.Values.StringValue;
@@ -11,6 +13,7 @@ import Model.Exceptions.ExpressionException;
 import Model.Exceptions.FileException;
 import Model.Exceptions.HeapException;
 import Model.Exceptions.StatementException;
+import Model.Types.IType;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -50,7 +53,18 @@ public class closeRFile implements IStmt {
             throw new StatementException("File path is not a string.");
         }
 
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType type = this.expression.typeCheck(typeEnv);
+        if (type.equals(new StringType())) {
+            return typeEnv;
+        } 
+        else {
+            throw new StatementException("closeRFile: expression is not a string.");
+        }
     }
 
     @Override

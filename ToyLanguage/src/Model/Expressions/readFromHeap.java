@@ -3,6 +3,7 @@ package Model.Expressions;
 import Model.Structures.*;
 import Model.Values.IValue;
 import Model.Values.RefValue;
+import Model.Types.IType;
 import Model.Types.RefType;
 
 import Model.Exceptions.*;
@@ -26,6 +27,16 @@ public class readFromHeap implements IExp {
             throw new ExpressionException("ERROR: The address of the given RefValue(" + this.exp.toString() + ") is not available in the heap.");
         }
         return heapTable.getHeapValue(address);
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws ExpressionException, DictionaryException {
+        IType expressionType = this.exp.typeCheck(typeEnvironment);
+        if (expressionType instanceof RefType) {
+            RefType refType = (RefType) expressionType;
+            return refType.getInner();
+        }
+        throw new ExpressionException("ERROR: The given expression(" + this.exp.toString() + ") does not evaluate to a RefType.");
     }
 
     @Override

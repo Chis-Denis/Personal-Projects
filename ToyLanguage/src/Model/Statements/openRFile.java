@@ -5,6 +5,9 @@ import Model.Types.StringType;
 import Model.Values.IValue;
 import Model.Values.StringValue;
 import Model.Expressions.IExp;
+import Model.Types.IType;
+import Model.Structures.IDictionary;
+
 
 import Model.Exceptions.DictionaryException;
 import Model.Exceptions.ExpressionException;
@@ -48,7 +51,20 @@ public class openRFile implements IStmt {
             throw new StatementException("File path is not a string.");
         }
 
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeFilePath = this.expression.typeCheck(typeEnv);
+
+        if (typeFilePath.equals(new StringType())) {
+            return typeEnv;
+        } 
+
+        else {
+            throw new StatementException("File path is not a string.");
+        }
     }
 
     @Override

@@ -6,6 +6,7 @@ import Model.ProgramState.ProgramState;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 
 public class Repository implements IRepository{
     private ArrayList<ProgramState> elements;
@@ -20,17 +21,12 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public ProgramState getCurrentProgramState() {
-        return this.elements.get(0);
-    }
-
-    @Override
     public void addProgramState(ProgramState newProgramState) {
         this.elements.set(0, newProgramState);
     }
 
     @Override
-    public void logPrgStateExec() throws FileException, IOException {
+    public void logPrgStateExec(ProgramState programState) throws FileException {
         PrintWriter logFile;
 
         try {
@@ -48,9 +44,21 @@ public class Repository implements IRepository{
             throw new FileException("Could not open/create/exist log file.");
         }
 
-        logFile.print(this.getCurrentProgramState().toString());
+        logFile.println(programState.toString());
         logFile.flush();
         logFile.close();
+
+        System.out.println(programState.toString());
+    }
+
+    @Override
+    public void setPrgList(List<ProgramState> newProgramStates) {
+        this.elements.clear();
+        this.elements.addAll(newProgramStates);
+    }
+
+    public List<ProgramState> getPrgList() {
+        return this.elements;
     }
 
 }

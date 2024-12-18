@@ -1,7 +1,9 @@
 package Model.Statements;
 
+import Model.Structures.IDictionary;
 import Model.Structures.IStack;
 import Model.ProgramState.ProgramState;
+import Model.Types.IType;
 
 import Model.Exceptions.StatementException;
 
@@ -19,7 +21,12 @@ public class CompStmt implements IStmt{
         IStack<IStmt> stack = state.getExecutionStack();
         stack.push(this.second);
         stack.push(this.first);
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws StatementException, Model.Exceptions.DictionaryException, Model.Exceptions.ExpressionException {
+        return this.second.typeCheck(this.first.typeCheck(typeEnvironment));
     }
 
     @Override

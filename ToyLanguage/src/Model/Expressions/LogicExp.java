@@ -3,6 +3,7 @@ package Model.Expressions;
 import Model.Structures.IDictionary;
 import Model.Structures.IHeapTable;
 import Model.Values.IValue;
+import Model.Types.IType;
 import Model.Values.BoolValue;
 import Model.Types.BoolType;
 
@@ -50,6 +51,23 @@ public class LogicExp implements IExp {
             }
         }
         else {
+            throw new ExpressionException("First operand is not a boolean.");
+        }
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws ExpressionException, DictionaryException {
+        IType type1, type2;
+        type1 = this.exp1.typeCheck(typeEnvironment);
+        type2 = this.exp2.typeCheck(typeEnvironment);
+
+        if (type1.equals(new BoolType())) {
+            if (type2.equals(new BoolType())) {
+                return new BoolType();
+            } else {
+                throw new ExpressionException("Second operand is not a boolean.");
+            }
+        } else {
             throw new ExpressionException("First operand is not a boolean.");
         }
     }

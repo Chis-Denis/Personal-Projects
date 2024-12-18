@@ -2,6 +2,8 @@ package Model.Structures;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import Model.Exceptions.DictionaryException;
 
@@ -44,6 +46,19 @@ public class MyDictionary<K, V> implements IDictionary<K, V>{
 
     public Map<K, V> getContent() {
         return this.elems;
+    }
+
+    public void setContent(Map<K, V> newContent) {
+        this.elems.clear();
+        this.elems.putAll(newContent);
+    }
+
+    @Override
+    public IDictionary<K, V> shallowCopy() {
+        Map<K, V> dictionaryContent = this.getContent();
+        IDictionary<K, V> newDictionary = new MyDictionary<>();
+        newDictionary.setContent(dictionaryContent.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
+        return newDictionary;
     }
 
     @Override

@@ -6,6 +6,9 @@ import Model.Values.IValue;
 import Model.Types.IntType;
 import Model.Values.IntValue;
 import Model.Values.BoolValue;
+import Model.Types.BoolType;
+import Model.Types.IType;
+
 
 import Model.Exceptions.DictionaryException;
 import Model.Exceptions.ExpressionException;
@@ -52,6 +55,25 @@ public class RelaExp implements IExp {
                     default:
                         throw new ExpressionException("Invalid relational operation given.");
                 }
+            }
+            else {
+                throw new ExpressionException("Second operand is not an integer.");
+            }
+        }
+        else {
+            throw new ExpressionException("First operand is not an integer.");
+        }
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws ExpressionException, DictionaryException {
+        IType type1, type2;
+        type1 = this.exp1.typeCheck(typeEnvironment);
+        type2 = this.exp2.typeCheck(typeEnvironment);
+
+        if (type1.equals(new IntType())) {
+            if (type2.equals(new IntType())) {
+                return new BoolType();
             }
             else {
                 throw new ExpressionException("Second operand is not an integer.");

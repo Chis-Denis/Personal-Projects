@@ -5,6 +5,8 @@ import Model.ProgramState.ProgramState;
 import Model.Types.RefType;
 import Model.Values.IValue;
 import Model.Values.RefValue;
+import Model.Structures.IDictionary;
+import Model.Types.IType;
 
 import Model.Exceptions.*;
 
@@ -35,7 +37,20 @@ public class writeToHeap implements IStmt {
             throw new StatementException("ERROR: The type of the given expression(" + this.exp.toString() + ") does not match with the location type.");
         }
         state.getHeapTable().updateHeapValue(refValue.getAddress(), expValue);
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeVar = typeEnv.lookUp(this.varName);
+        IType typeExp = this.exp.typeCheck(typeEnv);
+
+        if (typeVar.equals(new RefType(typeExp))) {
+            return typeEnv;
+        } 
+        else {
+            throw new StatementException("Assignment: right hand side and left hand side have different types.");
+        }
     }
 
     @Override

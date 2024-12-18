@@ -1,0 +1,369 @@
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(string varf; (varf = test.in; (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |string varf, (varf = test.in; (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |string varf, (varf = test.in; (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(varf = test.in; (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))))|
+Symbol Table: {"varf": }
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(varf = test.in; (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))))|
+Symbol Table: {"varf": }
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |varf = test.in, (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))))|
+Symbol Table: {"varf": }
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |varf = test.in, (openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))))|
+Symbol Table: {"varf": }
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(openRFile(varf); (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |openRFile(varf), (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |openRFile(varf), (fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(fork((int varc; (readFile(varf, varc); print(varc)))); (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf)))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |fork((int varc; (readFile(varf, varc); print(varc)))), (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |fork((int varc; (readFile(varf, varc); print(varc)))), (int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |(int varc; (readFile(varf, varc); print(varc)))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(int varc; (readFile(varf, varc); (print(varc); closeRFile(varf))))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |(int varc; (readFile(varf, varc); print(varc)))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |int varc, (readFile(varf, varc); (print(varc); closeRFile(varf)))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |int varc, (readFile(varf, varc); print(varc))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |int varc, (readFile(varf, varc); (print(varc); closeRFile(varf)))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |int varc, (readFile(varf, varc); print(varc))|
+Symbol Table: {"varf": test.in}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(readFile(varf, varc); (print(varc); closeRFile(varf)))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |(readFile(varf, varc); print(varc))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(readFile(varf, varc); (print(varc); closeRFile(varf)))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |(readFile(varf, varc); print(varc))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |readFile(varf, varc), (print(varc); closeRFile(varf))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |readFile(varf, varc), print(varc)|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |readFile(varf, varc), (print(varc); closeRFile(varf))|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |readFile(varf, varc), print(varc)|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(print(varc); closeRFile(varf))|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |print(varc)|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |(print(varc); closeRFile(varf))|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: |print(varc)|
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |print(varc), closeRFile(varf)|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: [0]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 16
+2024/12/18 04:31:35
+Execution Stack: ||
+Symbol Table: {"varf": test.in, "varc": 0}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: [0]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |print(varc), closeRFile(varf)|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: [0]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |closeRFile(varf)|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: [20, 10]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: |closeRFile(varf)|
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {"test.in": java.io.BufferedReader@2b05039f}
+Output: [20, 10]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 15
+2024/12/18 04:31:35
+Execution Stack: ||
+Symbol Table: {"varf": test.in, "varc": 10}
+Heap Table: 
+File Table: {}
+Output: [20, 10]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

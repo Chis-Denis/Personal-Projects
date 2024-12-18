@@ -5,6 +5,8 @@ import Model.ProgramState.ProgramState;
 import Model.Types.BoolType;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
+import Model.Types.IType;
+import Model.Structures.IDictionary;
 
 import Model.Exceptions.*;
 
@@ -28,7 +30,18 @@ public class WhileStmt implements IStmt {
         } else {
             throw new StatementException("Condition is not a boolean value.");
         }
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeCond = this.exp.typeCheck(typeEnv);
+        if (typeCond.equals(new BoolType())) {
+            this.stmt.typeCheck(typeEnv.shallowCopy());
+            return typeEnv;
+        } else {
+            throw new StatementException("Condition is not a boolean.");
+        }
     }
 
     @Override

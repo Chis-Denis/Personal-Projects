@@ -3,6 +3,8 @@ package Model.Statements;
 import Model.Expressions.IExp;
 import Model.Values.IValue;
 import Model.ProgramState.ProgramState;
+import Model.Types.IType;
+import Model.Structures.IDictionary;
 
 import Model.Exceptions.ExpressionException;
 import Model.Exceptions.HeapException;
@@ -19,7 +21,13 @@ public class PrintStmt implements IStmt{
     public ProgramState execute(ProgramState currentState) throws ExpressionException, DictionaryException, HeapException {
         IValue expressionValue = this.expression.eval(currentState.getSymbolTable(), currentState.getHeapTable());
         currentState.getOutput().add(expressionValue);
-        return currentState;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws ExpressionException, DictionaryException {
+        this.expression.typeCheck(typeEnv);
+        return typeEnv;
     }
 
     @Override

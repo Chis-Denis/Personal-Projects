@@ -1,9 +1,10 @@
 package View;
 
 import Controller.Controller;
-import Model.Exceptions.*;
+import Model.Exceptions.DictionaryException;
+import Model.Exceptions.ExpressionException;
+import Model.Exceptions.StatementException;
 
-import java.io.IOException;
 
 public class RunExample extends Command {
     private Controller controller;
@@ -16,10 +17,10 @@ public class RunExample extends Command {
     @Override
     public void execute() {
         try {
-            this.controller.reinitializeProgramState();
+            this.controller.typeCheck();
             this.controller.allSteps();
         } 
-        catch (ControllerException | ListException | StackException | IOException | ExpressionException | DictionaryException | StatementException | HeapException |FileException e) {
+        catch (InterruptedException | StatementException | DictionaryException | ExpressionException e) {
             System.out.println(e.getMessage());
         }
     }

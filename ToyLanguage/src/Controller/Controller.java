@@ -1,87 +1,88 @@
 package Controller;
 
-import Model.Structures.*;
-import Model.Statements.*;
 import Model.ProgramState.*;
 import Model.Values.*;
 
 import Model.Exceptions.*;
 
-import java.io.IOException;
-import java.sql.Ref;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 import Repository.IRepository;
 
 public class Controller {
     private IRepository repo;
-    private boolean displayFlag;
+    private ExecutorService executor;
 
     public Controller(IRepository repo) {
         this.repo = repo;
-        this.displayFlag = true;
+    }
+
+    public void typeCheck() throws StatementException, ExpressionException, DictionaryException {
+        this.repo.getPrgList().get(0).typeCheck();
+
     }
 
     public void addProgramState(ProgramState prg) {
         this.repo.addProgramState(prg);
     }
 
-    public void reinitializeProgramState() {
-        ProgramState currentProgramState = this.repo.getCurrentProgramState();
-        ProgramState newProgramState = new ProgramState(currentProgramState.getOriginalProgram());
-        this.repo.addProgramState(newProgramState);
+    List<ProgramState> removeCompletedPrograms(List<ProgramState> inProgramList) {
+        return inProgramList.stream()
+                .filter(ProgramState::isNotCompleted)
+                .collect(Collectors.toList());
     }
 
-    public ProgramState oneStep(ProgramState currentState) throws ControllerException, StackException, StatementException, ExpressionException, DictionaryException, HeapException ,FileException {
-        IStack<IStmt> executionStack = currentState.getExecutionStack();
-        if (executionStack.isEmpty()) {
-            throw new ControllerException("Program state's execution stack is empty.");
-        }
+    public void oneStepForAllPrg(List<ProgramState> programStatesList) throws InterruptedException {
 
-        IStmt topStatement = executionStack.pop();
-        return topStatement.execute(currentState);
-    }
-
-    public void allSteps() throws ControllerException, StatementException, StackException, ExpressionException, DictionaryException, ListException, HeapException ,FileException, IOException {
-        ProgramState programState = this.repo.getCurrentProgramState();
-
-        if (programState.getExecutionStack().isEmpty()) {
-            throw new ControllerException("The program state's execution stack is empty.");
-        }
-
-        this.repo.logPrgStateExec();
-        if (this.displayFlag) {
-            System.out.println("Program execution started:");
-            System.out.print(programState.toString() + "\n");
-        }
-
-        int outputListSize = 0;
-        IList<IValue> output;
-
-        while (!programState.getExecutionStack().isEmpty()) {
-            this.oneStep(programState);
-            this.repo.logPrgStateExec();
-
-            //Garbage Collector
-            Map<Integer, IValue> heapContent = programState.getHeapTable().getContent();
-            List<Integer> symbolTableAddresses = this.getAddressesFromSymTable(programState.getSymbolTable().getContent().values());
-            List<Integer> allReferencedAddresses = this.addIndirectAddresses(symbolTableAddresses, heapContent);
-            programState.getHeapTable().setContent(this.garbageCollector(allReferencedAddresses, heapContent));
-
-            if (this.displayFlag) {
-                System.out.println(programState);
-            } 
-            
-            else {
-                output = programState.getOutput();
-                
-                if (outputListSize != output.size()) {
-                    outputListSize = output.size();
-                    System.out.println(output.getElemAtIndex(output.size() - 1).toString());
-                }
+        programStatesList.forEach(prg -> {
+            try {
+                this.repo.logPrgStateExec(prg);
+            } catch (FileException e) {
+                e.printStackTrace();
             }
+        });
+
+        List<Callable<ProgramState>> callList = programStatesList.stream()
+                .map((ProgramState p) -> (Callable<ProgramState>) (p::oneStep))
+                .collect(Collectors.toList());
+        
+        List<ProgramState> newProgramStatesList = this.executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.printStackTrace();
+                        return null;
+                    }
+                })
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+
+        programStatesList.addAll(newProgramStatesList);
+        programStatesList.forEach(prg -> {
+            try {
+                this.repo.logPrgStateExec(prg);
+            } catch (FileException e) {
+                e.printStackTrace();
+            }
+        });
+
+        this.repo.setPrgList(programStatesList);
+
+    }
+
+    public void allSteps() throws InterruptedException {
+        this.executor = Executors.newFixedThreadPool(2);
+        List<ProgramState> prgList = this.removeCompletedPrograms(this.repo.getPrgList());
+        while (prgList.size() > 0) {
+            this.conservativeGarbageCollector(prgList);
+            this.oneStepForAllPrg(prgList);
+            prgList = this.removeCompletedPrograms(this.repo.getPrgList());
         }
+        this.executor.shutdownNow();
+        this.repo.setPrgList(prgList);
     }
 
     private List<Integer> getAddressesFromSymTable(Collection<IValue> symbolTableValues) {
@@ -118,11 +119,11 @@ public class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    public void turnDisplayFlagOn() {
-        this.displayFlag = true;
-    }
-
-    public void turnDisplayFlagOff() {
-        this.displayFlag = false;
+    private void conservativeGarbageCollector(List<ProgramState> prgList) {
+        Map<Integer, IValue> heapContent = prgList.get(0).getHeapTable().getContent();
+        List<IValue> symbolTableValues = prgList.stream().flatMap(prg -> prg.getSymbolTable().getContent().values().stream()).collect(Collectors.toList());
+        List<Integer> symbolTableAddresses = this.getAddressesFromSymTable(symbolTableValues);
+        List<Integer> allReferencedAddresses = this.addIndirectAddresses(symbolTableAddresses, heapContent);
+        prgList.get(0).getHeapTable().setContent(this.garbageCollector(allReferencedAddresses, heapContent));
     }
 }

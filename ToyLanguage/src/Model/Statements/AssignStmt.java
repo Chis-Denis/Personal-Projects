@@ -41,7 +41,21 @@ public class AssignStmt implements IStmt {
             throw new StatementException("The used variable " + id + " was not declared before.");
         }
 
-        return state;
+        return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws StatementException, DictionaryException, ExpressionException {
+        IType typeVar = typeEnv.lookUp(this.id);
+        IType typeExp = this.expression.typeCheck(typeEnv);
+
+        if (typeVar.equals(typeExp)) {
+            return typeEnv;
+        } 
+        
+        else {
+            throw new StatementException("Assignment: right hand side and left hand side have different types.");
+        }
     }
 
     @Override
