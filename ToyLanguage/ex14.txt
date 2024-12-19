@@ -1,0 +1,429 @@
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(Ref(int) a; (int v; (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a))))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |Ref(int) a, (int v; (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |Ref(int) a, (int v; (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))))|
+Symbol Table: {}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(int v; (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))))|
+Symbol Table: {"a": (0, int)}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(int v; (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))))|
+Symbol Table: {"a": (0, int)}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |int v, (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a))))))|
+Symbol Table: {"a": (0, int)}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |int v, (new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a))))))|
+Symbol Table: {"a": (0, int)}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a))))))|
+Symbol Table: {"a": (0, int), "v": 0}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(new(a, 10); (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a))))))|
+Symbol Table: {"a": (0, int), "v": 0}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |new(a, 10), (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))|
+Symbol Table: {"a": (0, int), "v": 0}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |new(a, 10), (fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))|
+Symbol Table: {"a": (0, int), "v": 0}
+Heap Table: 
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))); (v = 30; (print(v); print(readFromHeap(a)))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))), (v = 30; (print(v); print(readFromHeap(a))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |fork((v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))), (v = 30; (print(v); print(readFromHeap(a))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(v = 30; (print(v); print(readFromHeap(a))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |(v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(v = 30; (print(v); print(readFromHeap(a))))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |(v = 20; (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v)))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |v = 30, (print(v); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |v = 20, (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |v = 30, (print(v); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |v = 20, (fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v))|
+Symbol Table: {"a": (1, int), "v": 0}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(print(v); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |(fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |(print(v); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |(fork((WriteToHeap(a, 40); print(readFromHeap(a)))); print(v))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |print(v), print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |fork((WriteToHeap(a, 40); print(readFromHeap(a)))), print(v)|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |print(v), print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |fork((WriteToHeap(a, 40); print(readFromHeap(a)))), print(v)|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: []
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |print(v)|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |(WriteToHeap(a, 40); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: |print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: |print(v)|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |(WriteToHeap(a, 40); print(readFromHeap(a)))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 14
+2024/12/18 16:53:02
+Execution Stack: ||
+Symbol Table: {"a": (1, int), "v": 30}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 17
+2024/12/18 16:53:02
+Execution Stack: ||
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |WriteToHeap(a, 40), print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |WriteToHeap(a, 40), print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 10
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 40
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: |print(readFromHeap(a))|
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 40
+
+File Table: {}
+Output: [30, 10, 20]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID: 18
+2024/12/18 16:53:02
+Execution Stack: ||
+Symbol Table: {"a": (1, int), "v": 20}
+Heap Table: 1 -> 40
+
+File Table: {}
+Output: [30, 10, 20, 40]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

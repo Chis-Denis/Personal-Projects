@@ -253,6 +253,21 @@ public class Interpreter {
         IRepository repo15 = new Repository(prg15, "ex15.txt");
         Controller controller15 = new Controller(repo15);
 
+        // Example 16: "bool x; x = 420; print(x);", 
+        IStmt ex16 = new CompStmt(
+                new VarDeclStmt("x", new BoolType()), // Declare x as a boolean
+                new CompStmt(
+                        new AssignStmt("x", new ValueExp(new IntValue(5))), // Error: Assigning an integer to a boolean
+                        new PrintStmt(new VarExp("x"))
+                )
+        );
+
+
+        ProgramState prg16 = new ProgramState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(),
+                new MyList<IValue>(), new MyFileTable<StringValue, BufferedReader>(), new MyHeapTable<IValue>(), ex16);
+        IRepository repo16 = new Repository(prg16, "ex16.txt");
+        Controller controller16 = new Controller(repo16);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "Exit"));
         menu.addCommand(new RunExample("1", "int v; v = 2; print(x)", controller1));
@@ -270,6 +285,8 @@ public class Interpreter {
         menu.addCommand(new RunExample("13", "int v; Ref int a; v = 10; new(a,22); fork(wH(a,30); v = 32; print(v); print(rH(a));); print(v); print(rH(a)", controller13));
         menu.addCommand(new RunExample("14", "Ref (int) a; int v; new(a, 10); fork(v=20; fork(wH(a, 40); print(rH(a));); print(v);); v=30; print(v); print(rH(a);", controller14));
         menu.addCommand(new RunExample("15", "string varf; varf = \"test.in\"; open file varf; fork(int varc; read file(varf, varc); print(varc);); int varc; read file(varf, varc); print(varc); close file(varf);", controller15));
+        menu.addCommand(new RunExample("16", "bool x; x = 5; print(x);", controller16));
+        
 
         menu.show();
     }

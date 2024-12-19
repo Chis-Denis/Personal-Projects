@@ -2,7 +2,6 @@ package Model.Structures;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import Model.Exceptions.DictionaryException;
@@ -29,19 +28,18 @@ public class MyDictionary<K, V> implements IDictionary<K, V>{
 
     @Override
     public V removeKey(K key) throws DictionaryException {
-        if (!this.elems.containsKey(key)) {
+        V value = this.elems.remove(key);
+        if (value != null) {
+            return value;
+        }
+        else {
             throw new DictionaryException("Failed to remove key: key not in dictionary.");
         }
-        return this.elems.remove(key);
     }
 
     @Override
     public boolean isDefined(K key) {
         return this.elems.containsKey(key);
-    }
-
-    public HashMap<K, V> getElems() {
-        return this.elems;
     }
 
     public Map<K, V> getContent() {

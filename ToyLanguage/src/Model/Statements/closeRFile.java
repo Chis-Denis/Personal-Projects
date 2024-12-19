@@ -13,7 +13,6 @@ import Model.Exceptions.ExpressionException;
 import Model.Exceptions.FileException;
 import Model.Exceptions.HeapException;
 import Model.Exceptions.StatementException;
-import Model.Types.IType;
 
 import java.io.BufferedReader;
 import java.io.IOException;

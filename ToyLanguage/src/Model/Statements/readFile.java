@@ -51,7 +51,7 @@ public class readFile implements IStmt {
                     } 
                     
                     catch (IOException e) {
-                        throw new FileException("Error reading from file.");
+                        throw new StatementException("Error reading from file.");
                     }
                 }
 
@@ -66,7 +66,7 @@ public class readFile implements IStmt {
         }
 
         else {
-            throw new StatementException("Variable is not defined.");
+            throw new DictionaryException("Variable is not defined.");
         }
 
         return null;
