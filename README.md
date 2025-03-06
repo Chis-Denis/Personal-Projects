@@ -1,13 +1,21 @@
 # Personal Projects Repository 📚
 🛠️Java-Based Interpreter for Custom Programming Languages
 
-This repository has a robust interpreter framework written in Java that is utilized for executing and simulating programs in user-specified programming languages. The interpreter leverages advanced Java features like multithreading-based concurrency management, dynamic type checking, and user-specified memory management functions. It has a modular architecture with a variety of statements and expressions that emulate real programming constructs like control flow, file operations, and memory allocation.
+Advanced Java Interpreter Framework with JavaFX UI
+This repository presents an advanced interpreter framework developed in Java, tailored for executing and simulating programs in user-defined programming languages. The interpreter combines robust Java capabilities with JavaFX to provide a graphical user interface, enhancing user interaction and visual representation of program execution. This integration allows for dynamic type checking, concurrency management using multithreading, and custom memory management alongside sophisticated user interface designs.
 
 Key Features:
-
-Dynamic Type Checking: Offers type safety during operations with strict compile-time and runtime checks. Concurrency Support: Utilizes Java's ExecutorService to manage concurrent execution threads, showing the management of concurrent tasks in the interpreter. Memory Management: Offers proprietary garbage collection and reference management to simulate a heap storage mechanism. Customizable Syntax and Operations: Supports a wide range of operations and structures, from basic arithmetic to complex file operations and logical gates. Interactive Command-Line Menu: Offers a text menu for interactively selecting and running pre-defined scripts, enhancing usability and test flexibility. 
+-Dynamic Type Checking: Ensures strict type safety through detailed compile-time and runtime checks.
+-Concurrency Support: Employs Java’s ExecutorService for managing multiple execution threads, showcasing efficient management of concurrent tasks within the interpreter.
+-Memory Management: Features custom garbage collection and reference management to emulate a complex heap storage mechanism.
+-Advanced Locking Mechanisms: Includes locking mechanisms like lock tables and synchronized blocks to manage thread synchronization and safe resource access.
+-JavaFX Graphical User Interface: Utilizes JavaFX to provide a rich graphical user interface that makes the interpreter more accessible and user-friendly. -Includes interactive elements like menus, buttons, and text areas for script input and result display.
+-Customizable Syntax and Operations: Supports a broad range of operations and structures, from basic arithmetic to complex file operations and logical gates.
+-Styling with CSS: Integrates CSS for styling the JavaFX components, enhancing the visual appeal and usability of the interface.
 
 Technology Stack:
-
-Java 11 for core development; Multithreading for concurrency; Custom data structures for type and state management; 
-This It is a very useful and practical project of a learning tool that pours insight into programming language and interpreter internals. As an educational tool or simply for fun, this framework forms good ground for extending and experimentation with language and interpreter functionality. 
+-Core Development: Java 11
+-User Interface: JavaFX for graphical user interface development
+-Concurrency: Multithreading for handling concurrent executions
+-Data Structures: Custom data structures for effective type and state management
+-Styling: CSS for styling JavaFX components
