@@ -1,4 +1,5 @@
-Java-Based Interpreter for Custom Programming Languages
+# Personal Projects Repository 📚
+🛠️Java-Based Interpreter for Custom Programming Languages
 
 This repository hosts a robust interpreter framework developed in Java, designed for simulating and executing programs written in custom-defined programming languages. The interpreter leverages advanced Java features, including concurrency management with multithreading, dynamic type checking, and custom memory management routines. It's equipped with a modular architecture featuring a variety of statements and expressions that simulate real-world programming constructs like control flow, file operations, and memory allocation.
 
