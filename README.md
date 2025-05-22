@@ -26,21 +26,28 @@ This project serves as an invaluable tool for both educational purposes and pers
 
 ## 🎬 LocalMovie - Local Movie Management System
 
-A comprehensive desktop application designed to manage and organize your local movie collection. Built with modern technologies, this application provides an intuitive interface for cataloging, searching, and managing your personal movie library.
+A comprehensive desktop application designed to manage and organize your local movie collection. Built with modern technologies, this application provides an intuitive interface for cataloging, searching, and managing your personal movie library. Perfect for movie enthusiasts who want to maintain their own organized collection without relying on external services.
 
 ### 🌟 Key Features
 
-- **Movie Cataloging:** Easily add and organize movies with detailed information including title, year, genre, and personal ratings
-- **Local Storage:** All movie data is stored locally, ensuring privacy and offline access
-- **Search and Filter:** Powerful search capabilities to quickly find movies in your collection
+- **Movie Cataloging:** Easily add and organize movies with detailed information including title, year, genre, director, cast, runtime, and personal ratings
+- **Local Storage:** All movie data is stored locally using SQLite database, ensuring privacy and offline access
+- **Advanced Search:** Powerful search capabilities with filters for genre, year, rating, and custom tags
 - **Custom Categories:** Create and manage custom categories and tags for better organization
-- **User-Friendly Interface:** Clean and intuitive design for seamless movie management
+- **Poster Management:** Automatically fetch and store movie posters locally
+- **Watchlist System:** Create and manage multiple watchlists for different viewing priorities
+- **Statistics Dashboard:** View insights about your collection including genre distribution and watch history
+- **Export/Import:** Backup and restore your movie database with JSON export/import functionality
 
 ### 🛠️ Technology Stack
 
-- **Frontend:** Modern UI framework for responsive and attractive interface
-- **Database:** Local database for efficient data storage and retrieval
-- **Search Engine:** Advanced search algorithms for quick movie discovery
+- **Frontend:** PyQt6 for modern, responsive desktop interface
+- **Database:** SQLite3 for efficient local data storage
+- **Search Engine:** Custom-built search algorithm with fuzzy matching
+- **Movie Data:** Integration with TMDB API for movie information
+- **Image Processing:** Pillow for poster image handling
+- **Data Management:** SQLAlchemy ORM for database operations
+- **Styling:** Custom QSS (Qt Style Sheets) for modern UI appearance
 
 ## 🐍 PythonSmallProjects
 
